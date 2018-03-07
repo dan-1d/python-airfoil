@@ -32,7 +32,7 @@ class AirfoilDat(object):
     @property
     def surfacepts(self):
         '''
-        get surface points, scaled such that the chord is the dimension given in mm
+        get surface points, or the airfoil perimeter
         '''
         return self.__surfacepts
 
@@ -116,9 +116,10 @@ if __name__ == "__main__":
     '''
     TODO: Clean up the filenames and user options to be more clear and flexible
     '''
+    input_file = args.input_file
+
 
     if( args.output_file is None ):
-        input_file = args.input_file
         output_file_dxf = input_file + ".dxf"
         output_file_svg = input_file + ".svg"
     else:
